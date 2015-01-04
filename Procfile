@@ -1,1 +1,1 @@
-web: gunicorn acupwithme.wsgi --log-file -
+web: gunicorn acupwithme/acupwithme.wsgi --log-file -
