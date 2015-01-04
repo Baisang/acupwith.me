@@ -20,10 +20,12 @@ def index(request):
 	return render(request, 'djangocup/index.html', {'cups_list':cups_list, 'locs_list':locs_list,})
 
 def add_cup(request):
-
+	cups_list = Cup.objects.all()[::-1]
+	#in the future, order by proximity..
+	locs_list = Location.objects.order_by('location_name').all()
 	location = get_object_or_404(Location,pk=request.POST['location'])
 	c = Cup(lister_name=request.POST['name'], location=location, topic=request.POST['topic'], timestamp=timezone.now())
-	if c.topic is None or c.topic is "":
+	if c.topic == "":
 		return render(request, 'djangocup/index.html', {'cups_list':cups_list, 'locs_list':locs_list, 'error_message': "You didn't enter a topic",})
 	c.save()
 	return HttpResponseRedirect(reverse('index'))
