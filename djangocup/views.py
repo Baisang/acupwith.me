@@ -23,7 +23,7 @@ def add_cup(request):
 
 	location = get_object_or_404(Location,pk=request.POST['location'])
 	c = Cup(lister_name=request.POST['name'], location=location, topic=request.POST['topic'], timestamp=timezone.now())
-	if c.topic is None:
+	if c.topic is None or c.topic is "":
 		return render(request, 'djangocup/index.html', {'cups_list':cups_list, 'locs_list':locs_list, 'error_message': "You didn't enter a topic",})
 	c.save()
 	return HttpResponseRedirect(reverse('index'))
