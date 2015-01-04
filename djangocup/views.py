@@ -13,7 +13,7 @@ import datetime
 def index(request):
 	final_list = []
 	cups_list = Cup.objects.all()[::-1]
-	locs_list = Location.objects.all()
+	locs_list = Location.objects.order_by('-location_name').all()
 	
 
 	return render(request, 'djangocup/index.html', {'cups_list':cups_list, 'locs_list':locs_list,})
