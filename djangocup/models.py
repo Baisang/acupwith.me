@@ -33,5 +33,5 @@ class Cup(models.Model):
 			date_string += "0"
 		date_string += str(t.minute)
 		date_string += "AM" if am else "PM"
-		date_string += " PST"
+#		date_string += " PST"
 		return date_string
