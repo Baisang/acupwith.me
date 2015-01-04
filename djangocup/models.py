@@ -28,7 +28,10 @@ class Cup(models.Model):
 			am = False
 		if hour == 0:
 			hour = 12
-		date_string += " " + str(hour) + ":" + str(t.minute)
+		date_string += " " + str(hour) + ":"
+		if t.minute < 10:
+			date_string += "0"
+		date_string += str(t.minute)
 		date_string += "AM" if am else "PM"
 		date_string += " PST"
 		return date_string
