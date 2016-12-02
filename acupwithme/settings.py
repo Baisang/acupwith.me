@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2os0-lmm*8-f%&&kvt++&2qwb$tn1+n+(@lm%m=*w_(7tazf&r'
+SECRET_KEY = 'thisreallydefiniteleyisnotasecret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,11 +60,11 @@ WSGI_APPLICATION = 'acupwithme.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'det011fk2dv1vc',
-        'USER': 'ftzkecuhtvvbez',
-        'PASSWORD': 'yBcIYr8HmGSPJzXobQxfLMM8HQ',
-        'HOST': 'ec2-54-235-76-206.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'beats me',
+        'USER': 'lolidk',
+        'PASSWORD': 'thisisnotapassword',
+        'HOST': 'some host',
+        'PORT': 'kek',
     }
 }
 
